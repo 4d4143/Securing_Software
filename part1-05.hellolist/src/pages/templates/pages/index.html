@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hello List!</title>
+    </head>
+
+    <body>
+        <h1>Hello List!</h1>
+
+        <ul>
+            {% for item in items %}
+            {{ item }}
+            {% endfor %}
+        </ul>
+
+        <form action='/' method="POST" name='content'>
+            {% csrf_token %}
+            <input type="text">
+        </form>
+    </body>
+</html>
