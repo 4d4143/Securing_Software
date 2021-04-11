@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Lemon Brothers Bank</title>
+    </head>
+
+
+    <body>
+		<h1>Lemon Brothers Bank</h1>
+
+        <table>
+		<tr>
+		<th style="text-align:left">Username: <td>{{user.username}} 
+		</table>
+
+
+        <form action='logout/' method="POST">
+			{% csrf_token %}
+            <input type="submit" value="Logout"/>
+        </form>
+		
+        <h2>Your IBAN accounts</h2>
+
+		<ul>
+		{% for a in accounts %}
+
+		<li>{{a}}
+		</li>
+
+		{% endfor %}
+		</ul>
+
+
+        <h2>Create a new account</h2>
+
+        <form action='add/' method="POST">
+            {% csrf_token %}
+
+			<input type="text" name="iban"/><br/>
+            <input type="submit" value="Send"/>
+        </form>
+    </body>
+
+
+    </body>
+</html>
